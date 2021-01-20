@@ -1614,3 +1614,6 @@ if [ -z ${CCACHE_EXEC} ]; then
 fi
 
 export ANDROID_BUILD_TOP=$(gettop)
+
+# Define our ROM for SmartBuild-enabled device trees
+export SMARTBUILD_RELEASE=styx

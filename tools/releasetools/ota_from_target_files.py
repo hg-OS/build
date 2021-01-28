@@ -809,6 +809,10 @@ else if get_stage("%(bcb_dev)s") == "3/3" then
   script.Print("Target: {}".format(target_info.fingerprint))
 
   script.AppendExtra("ifelse(is_mounted(\"/system\"), unmount(\"/system\"));")
+  android_version = target_info.GetBuildProp("ro.build.version.release")
+  security_patch = target_info.GetBuildProp("ro.build.version.security_patch")
+  script.printStyxBanner(android_version, security_patch)
+
   device_specific.FullOTA_InstallBegin()
 
   # All other partitions as well as the data wipe use 10% of the progress, and

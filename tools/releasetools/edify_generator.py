@@ -259,6 +259,16 @@ class EdifyGenerator(object):
     """Log a message to the screen (if the logs are visible)."""
     self.script.append('ui_print("%s");' % (message,))
 
+  def printStyxBanner(self, android_version, security_patch):
+    self.Print("----------------------------------------------")
+    self.Print("                                              ")
+    self.Print("              The Styx Project                ")
+    self.Print("                                              ")
+    self.Print("----------------------------------------------")
+    self.Print(" Android Version: %s"%(android_version))
+    self.Print(" Security Revision: %s"%(security_patch))
+    self.Print("----------------------------------------------")
+
   def TunePartition(self, partition, *options):
     fstab = self.fstab
     if fstab:
